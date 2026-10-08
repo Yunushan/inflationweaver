@@ -24,7 +24,7 @@ jobs:
         run: inflationweaver update --manifest "$UPDATE_MANIFEST" --store reports/store
       - name: Generate synthetic smoke report
         run: inflationweaver demo --out reports/demo
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: inflationweaver-series-and-demo
           path: reports/
