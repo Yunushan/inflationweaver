@@ -1,0 +1,31 @@
+name: Refresh configured series
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 7 * * 1'
+permissions:
+  contents: read
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.lock
+      - run: python -m pip install --no-deps .
+      - name: Refresh explicitly configured inputs
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EVDS_API_KEY: ${{ secrets.EVDS_API_KEY }}
+          UPDATE_MANIFEST: ${{ vars.INFLATIONWEAVER_UPDATE_MANIFEST || 'examples/update-manifest.json' }}
+        run: inflationweaver update --manifest "$UPDATE_MANIFEST" --store reports/store
+      - name: Generate synthetic smoke report
+        run: inflationweaver demo --out reports/demo
+      - uses: actions/upload-artifact@v4
+        with:
+          name: inflationweaver-series-and-demo
+          path: reports/
+          retention-days: 14

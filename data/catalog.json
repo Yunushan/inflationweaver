@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "description": "Instrument and ingestion metadata only; no catalog item promises an automatic market feed or bundled historical prices.",
+  "history_policy": "Analysis may begin in 1986 only where each selected input has supplied, valid overlapping history. Coverage never creates unavailable ENAG, ETF, crypto, or other observations.",
+  "series": [
+    {
+      "series_id": "XU100",
+      "name": "BIST 100",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "index points",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Use an audited TRY index series; specify price or total-return variant. Historical divisor changes and official continuity matter."
+    },
+    {
+      "series_id": "XU030",
+      "name": "BIST 30",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "index points",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Use an audited TRY index series; specify price or total-return variant. Historical divisor changes and official continuity matter."
+    },
+    {
+      "series_id": "XBANK",
+      "name": "BIST Banks",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "index points",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Use an audited TRY index series; specify price or total-return variant. Historical divisor changes and official continuity matter."
+    },
+    {
+      "series_id": "THYAO",
+      "name": "Turkish Airlines",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "TRY/share",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Use a consistently split/corporate-action adjusted series. A closing price excludes reinvested dividends; use a wealth series for total return."
+    },
+    {
+      "series_id": "TUPRS",
+      "name": "Tüpraş",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "TRY/share",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Use a consistently split/corporate-action adjusted series. A closing price excludes reinvested dividends; use a wealth series for total return."
+    },
+    {
+      "series_id": "ASELS",
+      "name": "Aselsan",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "TRY/share",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Use a consistently split/corporate-action adjusted series. A closing price excludes reinvested dividends; use a wealth series for total return."
+    },
+    {
+      "series_id": "ISCTR",
+      "name": "Türkiye İş Bankası C",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "TRY/share",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Use a consistently split/corporate-action adjusted series. A closing price excludes reinvested dividends; use a wealth series for total return."
+    },
+    {
+      "series_id": "TUIK_CPI",
+      "name": "TÜİK consumer price index",
+      "kind": "cpi",
+      "currency": "TRY",
+      "units": "index level",
+      "ingestion": "manual CSV / selected EVDS / OECD query",
+      "bundled_data": false,
+      "notes": "Use official index levels with base-series continuity and release dates; do not divide an asset by annual inflation percentages."
+    },
+    {
+      "series_id": "ENAG_CPI",
+      "name": "ENAG E-CPI linked levels",
+      "kind": "cpi",
+      "currency": "TRY",
+      "units": "linked index level",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Import published monthly changes as ENAG_MOM and chain only consecutive observed months; never synthesize 1986 ENAG history. Preserve publication evidence."
+    },
+    {
+      "series_id": "ENAG_MOM",
+      "name": "ENAG E-CPI monthly changes",
+      "kind": "monthly_rate",
+      "currency": "TRY",
+      "units": "percent/month",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Published MoM percentages in value; retain available_date, published_yoy and source_url. Not annual percentages."
+    },
+    {
+      "series_id": "US_CPI",
+      "name": "US all items CPI",
+      "kind": "cpi",
+      "currency": "USD",
+      "units": "index level",
+      "ingestion": "FRED / manual CSV",
+      "bundled_data": false,
+      "notes": "Select CPIAUCSL (seasonally adjusted) or CPIAUCNS (not seasonally adjusted) consciously. Current FRED vintage is not a release-date dataset.",
+      "provider_id": "CPIAUCSL"
+    },
+    {
+      "series_id": "USDTRY",
+      "name": "USD/TRY",
+      "kind": "fx",
+      "currency": "TRY/USD",
+      "units": "TRY per USD",
+      "ingestion": "selected EVDS / manual CSV",
+      "bundled_data": false,
+      "notes": "Quote direction is TRY per one USD; divide TRY assets by this series to obtain USD amounts. Specify buying/selling and observation time.",
+      "provider_id": "TP.DK.USD.A.YTL"
+    },
+    {
+      "series_id": "EURTRY",
+      "name": "EUR/TRY",
+      "kind": "fx",
+      "currency": "TRY/EUR",
+      "units": "TRY per EUR",
+      "ingestion": "selected EVDS / manual CSV",
+      "bundled_data": false,
+      "notes": "Quote direction is TRY per one EUR; buying/selling spreads and timestamp selection matter.",
+      "provider_id": "TP.DK.EUR.A.YTL"
+    },
+    {
+      "series_id": "CHFTRY",
+      "name": "CHF/TRY",
+      "kind": "fx",
+      "currency": "TRY/CHF",
+      "units": "TRY per CHF",
+      "ingestion": "selected EVDS / manual CSV",
+      "bundled_data": false,
+      "notes": "Use TRY per CHF for conversion into CHF. A CHF currency quote alone is not Swiss CPI."
+    },
+    {
+      "series_id": "GOLD_GRAM_TRY",
+      "name": "Gold gram TRY",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "TRY/gram",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Local retail premiums/spreads can differ from spot gold converted using FX; document which price is supplied."
+    },
+    {
+      "series_id": "GOLD_OZ_USD",
+      "name": "Gold troy ounce USD",
+      "kind": "price",
+      "currency": "USD",
+      "units": "USD/troy ounce",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Spot/futures/ETF series are different instruments. One troy ounce is 31.1034768 grams; conversion alone does not add local premiums."
+    },
+    {
+      "series_id": "SILVER_OZ_USD",
+      "name": "Silver troy ounce USD",
+      "kind": "price",
+      "currency": "USD",
+      "units": "USD/troy ounce",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Select a consistent quote, currency and spot/futures contract basis."
+    },
+    {
+      "series_id": "SP500",
+      "name": "S&P 500",
+      "kind": "price",
+      "currency": "USD",
+      "units": "index points",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Catalog describes a price index; reinvested dividends require the appropriate total-return source. Provider licenses and historical coverage vary."
+    },
+    {
+      "series_id": "NDX",
+      "name": "Nasdaq 100",
+      "kind": "price",
+      "currency": "USD",
+      "units": "index points",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Catalog describes a price index; reinvested dividends require the appropriate total-return source. Provider licenses and historical coverage vary."
+    },
+    {
+      "series_id": "DJI",
+      "name": "Dow Jones Industrial Average",
+      "kind": "price",
+      "currency": "USD",
+      "units": "index points",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Catalog describes a price index; reinvested dividends require the appropriate total-return source. Provider licenses and historical coverage vary."
+    },
+    {
+      "series_id": "BTCUSD",
+      "name": "Bitcoin USD",
+      "kind": "price",
+      "currency": "USD",
+      "units": "USD/token",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Choose venue, daily close timezone and stablecoin-versus-fiat quote deliberately. History predates neither the asset nor the chosen venue."
+    },
+    {
+      "series_id": "ETHUSD",
+      "name": "Ether USD",
+      "kind": "price",
+      "currency": "USD",
+      "units": "USD/token",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Choose venue, daily close timezone and stablecoin-versus-fiat quote deliberately. History predates neither the asset nor the chosen venue."
+    },
+    {
+      "series_id": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "kind": "price",
+      "currency": "USD",
+      "units": "USD/share",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Split-only close and dividend-adjusted wealth are different. Label whether dividends/distributions are reinvested; no 1986 ETF history is invented."
+    },
+    {
+      "series_id": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "kind": "price",
+      "currency": "USD",
+      "units": "USD/share",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Split-only close and dividend-adjusted wealth are different. Label whether dividends/distributions are reinvested; no 1986 ETF history is invented."
+    },
+    {
+      "series_id": "TEFAS_FUND",
+      "name": "User-selected TEFAS fund",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "TRY/unit",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Replace generic identifier with the actual fund code. Include management-fee treatment, fund inception, unit price and corporate changes."
+    },
+    {
+      "series_id": "TRY_DEPOSIT_WEALTH",
+      "name": "TRY deposit cumulative wealth",
+      "kind": "wealth",
+      "currency": "TRY",
+      "units": "TRY wealth / wealth index",
+      "ingestion": "manual CSV / engine scenario",
+      "bundled_data": false,
+      "notes": "Import cumulative after-tax wealth or construct it using explicit annual rate, day-count, compounding, maturity and tax rules. Annual deposit rates are not price levels."
+    },
+    {
+      "series_id": "TR_BOND_WEALTH",
+      "name": "Turkish bond cumulative wealth",
+      "kind": "wealth",
+      "currency": "TRY",
+      "units": "TRY wealth / total-return index",
+      "ingestion": "manual CSV",
+      "bundled_data": false,
+      "notes": "Yield alone is not total return. Include coupon reinvestment, duration, clean/dirty price, fees/taxes, FX for foreign-currency bonds and contractual dates."
+    },
+    {
+      "series_id": "TR_HOUSING_INDEX",
+      "name": "Türkiye housing price index",
+      "kind": "price",
+      "currency": "TRY",
+      "units": "index level",
+      "ingestion": "selected EVDS / manual CSV",
+      "bundled_data": false,
+      "notes": "Use TCMB series and regional/quality adjustment definition with release dates. A housing index excludes rent, transaction costs and individual-property differences."
+    }
+  ]
+}

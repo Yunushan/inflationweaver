@@ -1,0 +1,29 @@
+{
+  "name": "inflationweaver-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "0BSD",
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  },
+  "engines": { "node": ">=22.18.0" },
+  "dependencies": {
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "lightweight-charts": "5.2.1",
+    "papaparse": "5.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.0",
+    "@types/papaparse": "5.5.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}

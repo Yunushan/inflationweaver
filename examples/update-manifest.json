@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "description": "SYNTHETIC DEMO ONLY. Invented 2023\u20132024 values and release dates; no BIST, ENAG, T\u00dc\u0130K, TCMB, or US official observations.",
+  "series": [
+    {
+      "series_id": "DEMO_XU100",
+      "path": "data/demo_asset.csv",
+      "kind": "price",
+      "currency": "TRY",
+      "source": "synthetic-demo",
+      "synthetic": true,
+      "provider": "csv",
+      "mode": "replace"
+    },
+    {
+      "series_id": "DEMO_TUIK_CPI",
+      "path": "data/demo_cpi.csv",
+      "kind": "cpi",
+      "currency": "TRY",
+      "source": "synthetic-demo",
+      "synthetic": true,
+      "provider": "csv",
+      "mode": "replace"
+    },
+    {
+      "series_id": "DEMO_ENAG_CPI",
+      "path": "data/demo_enag_cpi.csv",
+      "kind": "cpi",
+      "currency": "TRY",
+      "source": "synthetic-demo",
+      "synthetic": true,
+      "provider": "csv",
+      "mode": "replace"
+    },
+    {
+      "series_id": "DEMO_ENAG_MOM",
+      "path": "data/demo_enag_mom.csv",
+      "kind": "monthly_rate",
+      "currency": "TRY",
+      "source": "synthetic-demo",
+      "synthetic": true,
+      "provider": "csv",
+      "mode": "replace"
+    },
+    {
+      "series_id": "DEMO_USDTRY",
+      "path": "data/demo_usdtry.csv",
+      "kind": "fx",
+      "currency": "TRY/USD",
+      "source": "synthetic-demo",
+      "synthetic": true,
+      "provider": "csv",
+      "mode": "replace"
+    },
+    {
+      "series_id": "DEMO_US_CPI",
+      "path": "data/demo_us_cpi.csv",
+      "kind": "cpi",
+      "currency": "USD",
+      "source": "synthetic-demo",
+      "synthetic": true,
+      "provider": "csv",
+      "mode": "replace"
+    },
+    {
+      "series_id": "DEMO_GOLD_TRY",
+      "path": "data/demo_gold.csv",
+      "kind": "price",
+      "currency": "TRY",
+      "source": "synthetic-demo",
+      "synthetic": true,
+      "provider": "csv",
+      "mode": "replace"
+    }
+  ]
+}

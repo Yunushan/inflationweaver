@@ -1,0 +1,8 @@
+include README.md README.tr.md LICENSE CHANGELOG.md CONTRIBUTING.md SECURITY.md
+include requirements.lock Makefile .env.example
+recursive-include docs *.md *.json
+recursive-include examples *.py *.json *.csv *.md
+recursive-include tradingview *.pine *.md
+recursive-include data *.json
+recursive-include src/inflationweaver/data *.json
+recursive-include tests *.py

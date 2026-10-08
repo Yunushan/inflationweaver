@@ -1,0 +1,636 @@
+[
+  {
+    "name": "compound-ratio",
+    "request": {
+      "asset": {
+        "series_id": "TEST_PRICE",
+        "kind": "price",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-01-31",
+            "value": 100,
+            "available_date": "2024-01-31"
+          },
+          {
+            "date": "2024-02-29",
+            "value": 120,
+            "available_date": "2024-02-29"
+          },
+          {
+            "date": "2024-03-31",
+            "value": 180,
+            "available_date": "2024-03-31"
+          }
+        ]
+      },
+      "inflation": {
+        "series_id": "TEST_CPI",
+        "kind": "cpi",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-01-31",
+            "value": 100,
+            "available_date": "2024-01-31"
+          },
+          {
+            "date": "2024-02-29",
+            "value": 110,
+            "available_date": "2024-02-29"
+          },
+          {
+            "date": "2024-03-31",
+            "value": 150,
+            "available_date": "2024-03-31"
+          }
+        ]
+      },
+      "alignment": "observation",
+      "max_staleness_days": 62
+    },
+    "result": {
+      "points": [
+        {
+          "date": "2024-01-31",
+          "asset_observation_date": "2024-01-31",
+          "asset_value": 100.0,
+          "inflation_observation_date": "2024-01-31",
+          "inflation_available_date": "2024-01-31",
+          "inflation_value": 100.0,
+          "nominal_index": 100.0,
+          "inflation_index": 100.0,
+          "real_index": 100.0,
+          "real_value": 100.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        },
+        {
+          "date": "2024-02-29",
+          "asset_observation_date": "2024-02-29",
+          "asset_value": 120.0,
+          "inflation_observation_date": "2024-02-29",
+          "inflation_available_date": "2024-02-29",
+          "inflation_value": 110.0,
+          "nominal_index": 120.0,
+          "inflation_index": 110.0,
+          "real_index": 109.0909090909091,
+          "real_value": 109.0909090909091,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        },
+        {
+          "date": "2024-03-31",
+          "asset_observation_date": "2024-03-31",
+          "asset_value": 180.0,
+          "inflation_observation_date": "2024-03-31",
+          "inflation_available_date": "2024-03-31",
+          "inflation_value": 150.0,
+          "nominal_index": 180.0,
+          "inflation_index": 150.0,
+          "real_index": 120.0,
+          "real_value": 120.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        }
+      ],
+      "metrics": {
+        "nominal_return_pct": 80.0,
+        "inflation_return_pct": 50.0,
+        "real_return_pct": 20.0,
+        "nominal_cagr_pct": 3480.4652721815046,
+        "inflation_cagr_pct": 1080.139992881599,
+        "real_cagr_pct": 203.3932663733331,
+        "nominal_max_drawdown_pct": 0.0,
+        "real_max_drawdown_pct": 0.0,
+        "elapsed_days": 60,
+        "observations": 3
+      },
+      "metadata": {
+        "asset_id": "TEST_PRICE",
+        "inflation_id": "TEST_CPI",
+        "asset_source": "synthetic-parity-test",
+        "inflation_source": "synthetic-parity-test",
+        "currency": "TRY",
+        "asset_kind": "price",
+        "alignment": "observation",
+        "retrospective": true,
+        "requested_base_date": null,
+        "actual_base_date": "2024-01-31",
+        "actual_end_date": "2024-03-31",
+        "actual_display_start_date": "2024-01-31",
+        "display_observations": 3,
+        "base_inflation_observation_date": "2024-01-31",
+        "max_staleness_days": 62,
+        "staleness_basis": "observation_date",
+        "synthetic": true,
+        "cagr_year_days": 365.2425,
+        "real_value_units": "TRY at base-date purchasing power"
+      }
+    }
+  },
+  {
+    "name": "base-before-display",
+    "request": {
+      "asset": {
+        "series_id": "TEST_PRICE",
+        "kind": "price",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-01-31",
+            "value": 100,
+            "available_date": "2024-01-31"
+          },
+          {
+            "date": "2024-02-29",
+            "value": 80,
+            "available_date": "2024-02-29"
+          },
+          {
+            "date": "2024-03-31",
+            "value": 180,
+            "available_date": "2024-03-31"
+          }
+        ]
+      },
+      "inflation": {
+        "series_id": "TEST_CPI",
+        "kind": "cpi",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-01-31",
+            "value": 100,
+            "available_date": "2024-01-31"
+          },
+          {
+            "date": "2024-02-29",
+            "value": 110,
+            "available_date": "2024-02-29"
+          },
+          {
+            "date": "2024-03-31",
+            "value": 150,
+            "available_date": "2024-03-31"
+          }
+        ]
+      },
+      "alignment": "observation",
+      "max_staleness_days": 62,
+      "base_date": "2024-01-31",
+      "start_date": "2024-02-29"
+    },
+    "result": {
+      "points": [
+        {
+          "date": "2024-02-29",
+          "asset_observation_date": "2024-02-29",
+          "asset_value": 80.0,
+          "inflation_observation_date": "2024-02-29",
+          "inflation_available_date": "2024-02-29",
+          "inflation_value": 110.0,
+          "nominal_index": 80.0,
+          "inflation_index": 110.0,
+          "real_index": 72.72727272727273,
+          "real_value": 72.72727272727273,
+          "nominal_drawdown": -19.999999999999996,
+          "real_drawdown": -27.27272727272727
+        },
+        {
+          "date": "2024-03-31",
+          "asset_observation_date": "2024-03-31",
+          "asset_value": 180.0,
+          "inflation_observation_date": "2024-03-31",
+          "inflation_available_date": "2024-03-31",
+          "inflation_value": 150.0,
+          "nominal_index": 180.0,
+          "inflation_index": 150.0,
+          "real_index": 120.0,
+          "real_value": 120.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        }
+      ],
+      "metrics": {
+        "nominal_return_pct": 80.0,
+        "inflation_return_pct": 50.0,
+        "real_return_pct": 20.0,
+        "nominal_cagr_pct": 3480.4652721815046,
+        "inflation_cagr_pct": 1080.139992881599,
+        "real_cagr_pct": 203.3932663733331,
+        "nominal_max_drawdown_pct": -19.999999999999996,
+        "real_max_drawdown_pct": -27.27272727272727,
+        "elapsed_days": 60,
+        "observations": 3
+      },
+      "metadata": {
+        "asset_id": "TEST_PRICE",
+        "inflation_id": "TEST_CPI",
+        "asset_source": "synthetic-parity-test",
+        "inflation_source": "synthetic-parity-test",
+        "currency": "TRY",
+        "asset_kind": "price",
+        "alignment": "observation",
+        "retrospective": true,
+        "requested_base_date": "2024-01-31",
+        "actual_base_date": "2024-01-31",
+        "actual_end_date": "2024-03-31",
+        "actual_display_start_date": "2024-02-29",
+        "display_observations": 2,
+        "base_inflation_observation_date": "2024-01-31",
+        "max_staleness_days": 62,
+        "staleness_basis": "observation_date",
+        "synthetic": true,
+        "cagr_year_days": 365.2425,
+        "real_value_units": "TRY at base-date purchasing power"
+      }
+    }
+  },
+  {
+    "name": "released",
+    "request": {
+      "asset": {
+        "series_id": "TEST_PRICE",
+        "kind": "price",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-01-31",
+            "value": 100,
+            "available_date": "2024-02-02"
+          },
+          {
+            "date": "2024-02-29",
+            "value": 120,
+            "available_date": "2024-02-29"
+          },
+          {
+            "date": "2024-03-31",
+            "value": 180,
+            "available_date": "2024-03-31"
+          }
+        ]
+      },
+      "inflation": {
+        "series_id": "TEST_CPI",
+        "kind": "cpi",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-01-31",
+            "value": 100,
+            "available_date": "2024-01-31"
+          },
+          {
+            "date": "2024-02-29",
+            "value": 110,
+            "available_date": "2024-03-03"
+          },
+          {
+            "date": "2024-03-31",
+            "value": 150,
+            "available_date": "2024-03-31"
+          }
+        ]
+      },
+      "alignment": "released",
+      "max_staleness_days": 62
+    },
+    "result": {
+      "points": [
+        {
+          "date": "2024-02-02",
+          "asset_observation_date": "2024-01-31",
+          "asset_value": 100.0,
+          "inflation_observation_date": "2024-01-31",
+          "inflation_available_date": "2024-01-31",
+          "inflation_value": 100.0,
+          "nominal_index": 100.0,
+          "inflation_index": 100.0,
+          "real_index": 100.0,
+          "real_value": 100.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        },
+        {
+          "date": "2024-02-29",
+          "asset_observation_date": "2024-02-29",
+          "asset_value": 120.0,
+          "inflation_observation_date": "2024-01-31",
+          "inflation_available_date": "2024-01-31",
+          "inflation_value": 100.0,
+          "nominal_index": 120.0,
+          "inflation_index": 100.0,
+          "real_index": 120.0,
+          "real_value": 120.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        },
+        {
+          "date": "2024-03-31",
+          "asset_observation_date": "2024-03-31",
+          "asset_value": 180.0,
+          "inflation_observation_date": "2024-03-31",
+          "inflation_available_date": "2024-03-31",
+          "inflation_value": 150.0,
+          "nominal_index": 180.0,
+          "inflation_index": 150.0,
+          "real_index": 120.0,
+          "real_value": 120.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        }
+      ],
+      "metrics": {
+        "nominal_return_pct": 80.0,
+        "inflation_return_pct": 50.0,
+        "real_return_pct": 20.0,
+        "nominal_cagr_pct": 3950.639423761221,
+        "inflation_cagr_pct": 1184.9811392275615,
+        "real_cagr_pct": 215.22948470638045,
+        "nominal_max_drawdown_pct": 0.0,
+        "real_max_drawdown_pct": 0.0,
+        "elapsed_days": 58,
+        "observations": 3
+      },
+      "metadata": {
+        "asset_id": "TEST_PRICE",
+        "inflation_id": "TEST_CPI",
+        "asset_source": "synthetic-parity-test",
+        "inflation_source": "synthetic-parity-test",
+        "currency": "TRY",
+        "asset_kind": "price",
+        "alignment": "released",
+        "retrospective": false,
+        "requested_base_date": null,
+        "actual_base_date": "2024-02-02",
+        "actual_end_date": "2024-03-31",
+        "actual_display_start_date": "2024-02-02",
+        "display_observations": 3,
+        "base_inflation_observation_date": "2024-01-31",
+        "max_staleness_days": 62,
+        "staleness_basis": "observation_date",
+        "synthetic": true,
+        "cagr_year_days": 365.2425,
+        "real_value_units": "TRY at base-date purchasing power"
+      }
+    }
+  },
+  {
+    "name": "late-old-release",
+    "request": {
+      "asset": {
+        "series_id": "TEST_PRICE",
+        "kind": "price",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-03-30",
+            "value": 100,
+            "available_date": "2024-03-30"
+          },
+          {
+            "date": "2024-03-31",
+            "value": 110,
+            "available_date": "2024-03-31"
+          }
+        ]
+      },
+      "inflation": {
+        "series_id": "TEST_CPI",
+        "kind": "cpi",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "2024-01-31",
+            "value": 100,
+            "available_date": "2024-03-20"
+          },
+          {
+            "date": "2024-02-29",
+            "value": 110,
+            "available_date": "2024-03-03"
+          }
+        ]
+      },
+      "alignment": "released",
+      "max_staleness_days": 62
+    },
+    "result": {
+      "points": [
+        {
+          "date": "2024-03-30",
+          "asset_observation_date": "2024-03-30",
+          "asset_value": 100.0,
+          "inflation_observation_date": "2024-02-29",
+          "inflation_available_date": "2024-03-03",
+          "inflation_value": 110.0,
+          "nominal_index": 100.0,
+          "inflation_index": 100.0,
+          "real_index": 100.0,
+          "real_value": 100.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        },
+        {
+          "date": "2024-03-31",
+          "asset_observation_date": "2024-03-31",
+          "asset_value": 110.0,
+          "inflation_observation_date": "2024-02-29",
+          "inflation_available_date": "2024-03-03",
+          "inflation_value": 110.0,
+          "nominal_index": 110.0,
+          "inflation_index": 100.0,
+          "real_index": 110.0,
+          "real_value": 110.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        }
+      ],
+      "metrics": {
+        "nominal_return_pct": 10.0,
+        "inflation_return_pct": 0.0,
+        "real_return_pct": 10.0,
+        "nominal_cagr_pct": 1.313311686664132e+17,
+        "inflation_cagr_pct": 0.0,
+        "real_cagr_pct": 1.313311686664132e+17,
+        "nominal_max_drawdown_pct": 0.0,
+        "real_max_drawdown_pct": 0.0,
+        "elapsed_days": 1,
+        "observations": 2
+      },
+      "metadata": {
+        "asset_id": "TEST_PRICE",
+        "inflation_id": "TEST_CPI",
+        "asset_source": "synthetic-parity-test",
+        "inflation_source": "synthetic-parity-test",
+        "currency": "TRY",
+        "asset_kind": "price",
+        "alignment": "released",
+        "retrospective": false,
+        "requested_base_date": null,
+        "actual_base_date": "2024-03-30",
+        "actual_end_date": "2024-03-31",
+        "actual_display_start_date": "2024-03-30",
+        "display_observations": 2,
+        "base_inflation_observation_date": "2024-02-29",
+        "max_staleness_days": 62,
+        "staleness_basis": "observation_date",
+        "synthetic": true,
+        "cagr_year_days": 365.2425,
+        "real_value_units": "TRY at base-date purchasing power"
+      }
+    }
+  },
+  {
+    "name": "synthetic-1986-dates",
+    "request": {
+      "asset": {
+        "series_id": "SYNTHETIC_1986",
+        "kind": "price",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "1986-01-31",
+            "value": 1,
+            "available_date": "1986-01-31"
+          },
+          {
+            "date": "1986-02-28",
+            "value": 1.2,
+            "available_date": "1986-02-28"
+          },
+          {
+            "date": "1986-03-31",
+            "value": 1.8,
+            "available_date": "1986-03-31"
+          }
+        ]
+      },
+      "inflation": {
+        "series_id": "SYNTHETIC_1986_CPI",
+        "kind": "cpi",
+        "currency": "TRY",
+        "source": "synthetic-parity-test",
+        "synthetic": true,
+        "data": [
+          {
+            "date": "1986-01-31",
+            "value": 100,
+            "available_date": "1986-01-31"
+          },
+          {
+            "date": "1986-02-28",
+            "value": 110,
+            "available_date": "1986-02-28"
+          },
+          {
+            "date": "1986-03-31",
+            "value": 150,
+            "available_date": "1986-03-31"
+          }
+        ]
+      },
+      "alignment": "observation",
+      "max_staleness_days": 62
+    },
+    "result": {
+      "points": [
+        {
+          "date": "1986-01-31",
+          "asset_observation_date": "1986-01-31",
+          "asset_value": 1.0,
+          "inflation_observation_date": "1986-01-31",
+          "inflation_available_date": "1986-01-31",
+          "inflation_value": 100.0,
+          "nominal_index": 100.0,
+          "inflation_index": 100.0,
+          "real_index": 100.0,
+          "real_value": 1.0,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        },
+        {
+          "date": "1986-02-28",
+          "asset_observation_date": "1986-02-28",
+          "asset_value": 1.2,
+          "inflation_observation_date": "1986-02-28",
+          "inflation_available_date": "1986-02-28",
+          "inflation_value": 110.0,
+          "nominal_index": 120.0,
+          "inflation_index": 110.0,
+          "real_index": 109.0909090909091,
+          "real_value": 1.0909090909090908,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        },
+        {
+          "date": "1986-03-31",
+          "asset_observation_date": "1986-03-31",
+          "asset_value": 1.8,
+          "inflation_observation_date": "1986-03-31",
+          "inflation_available_date": "1986-03-31",
+          "inflation_value": 150.0,
+          "nominal_index": 180.0,
+          "inflation_index": 150.0,
+          "real_index": 120.0,
+          "real_value": 1.2,
+          "nominal_drawdown": 0.0,
+          "real_drawdown": 0.0
+        }
+      ],
+      "metrics": {
+        "nominal_return_pct": 80.0,
+        "inflation_return_pct": 50.0,
+        "real_return_pct": 20.0,
+        "nominal_cagr_pct": 3704.3233493936773,
+        "inflation_cagr_pct": 1130.5574469510098,
+        "real_cagr_pct": 209.1544696933708,
+        "nominal_max_drawdown_pct": 0.0,
+        "real_max_drawdown_pct": 0.0,
+        "elapsed_days": 59,
+        "observations": 3
+      },
+      "metadata": {
+        "asset_id": "SYNTHETIC_1986",
+        "inflation_id": "SYNTHETIC_1986_CPI",
+        "asset_source": "synthetic-parity-test",
+        "inflation_source": "synthetic-parity-test",
+        "currency": "TRY",
+        "asset_kind": "price",
+        "alignment": "observation",
+        "retrospective": true,
+        "requested_base_date": null,
+        "actual_base_date": "1986-01-31",
+        "actual_end_date": "1986-03-31",
+        "actual_display_start_date": "1986-01-31",
+        "display_observations": 3,
+        "base_inflation_observation_date": "1986-01-31",
+        "max_staleness_days": 62,
+        "staleness_basis": "observation_date",
+        "synthetic": true,
+        "cagr_year_days": 365.2425,
+        "real_value_units": "TRY at base-date purchasing power"
+      }
+    }
+  }
+]
